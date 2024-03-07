@@ -117,7 +117,12 @@ public class Calculator extends JFrame
             
             if(opBut.equals("-")){display.setText(String.valueOf(Integer.valueOf(num1) - Integer.valueOf(num2)));}
             
-            if(opBut.equals("/")){display.setText(String.valueOf(Integer.valueOf(num1) / Integer.valueOf(num2)));}
+            if(!num2.equals("0")){ //in order to prevent divison to 0
+               if(opBut.equals("/")){display.setText(String.valueOf(Integer.valueOf(num1) / Integer.valueOf(num2)));}
+            }
+            else{
+               display.setText("Error: cannot divide to 0");
+            }
             
             if(opBut.equals("*")){display.setText(String.valueOf(Integer.valueOf(num1) * Integer.valueOf(num2)));}
             num1 = "0";
